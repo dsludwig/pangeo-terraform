@@ -1,6 +1,6 @@
 resource "google_container_node_pool" "core_node_pool" {
   name       = "core-pool"
-  zone       = "us-central1-a"
+  zone       = "${var.zone}"
   cluster    = "${google_container_cluster.primary.name}"
   autoscaling {
     min_node_count = "${var.min_worker_nodes}"
